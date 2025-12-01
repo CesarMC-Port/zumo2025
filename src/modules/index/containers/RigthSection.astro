@@ -1,0 +1,135 @@
+---
+import SplineBot from '../components/SplineBot.vue';
+import Simulation from '../components/Simulation.astro';
+import { config } from '../const';
+const team = './assets/team.jpeg';
+const diagram = './assets/diagram.webp';
+---
+
+<div id="particles" class="bg-[#0d1117] fixed rounded-br-md border-l-2 border-gray-600 inset-0 overflow-hidden h-full">
+  {Array.from({ length: 120 }).map((_, i) => (
+    <div
+      class="particle absolute w-1 h-1 bg-white opacity-35 rounded-full"
+      style={`left:${Math.random() * 100}%; top:${Math.random() * 100}%;`}
+    ></div>
+  ))}
+  <div id="scroll-3d-container" class="relative top-0 right-0 w-full h-full hidden lg:flex items-center justify-center overflow-hidden">
+
+    <div id="team-photo" class="absolute inset-0 flex items-center justify-center opacity-0 p-[120px]">
+      <img
+        src={team}
+        alt="Equipo Robot Sumo EQMEE"
+        class="rounded-xl shadow-2xl border border-gray-800 max-w-full max-h-full object-contain
+              animate-[float_4s_ease-in-out_infinite]
+              rotate-2"
+      />
+    </div>
+
+    <div id="spline-3d" class="absolute w-full h-full top-0 left-0">
+      <SplineBot client:load/>
+    </div>
+
+    <div id="photo-2" class="absolute inset-0 flex items-center justify-center transition-opacity duration-700 opacity-0 p-12">
+      <img
+        src={diagram}
+        alt="Diagrama electronico de EQMEE"
+        class="rounded-xl shadow-2xl border border-gray-800 max-w-full max-h-full object-contain photo-img"
+      />
+    </div>
+
+    <div id="simulation" class="absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-700 opacity-0">
+      <Simulation client:load/>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  import { initParticles } from "../scripts";
+  const container = document.getElementById("particles");
+  if (container) initParticles(container);
+</script>
+
+<script define:vars={{ config }}>
+  const {hidden, visible, splineEnd, photo2End, teamPhotoEnd} = config;
+  let currentSection = 0;
+
+  function updateVisibility() {
+    const scrollY = window.scrollY;
+
+    const teamPhoto = document.getElementById('team-photo');
+    const spline = document.getElementById('spline-3d');
+    const photo2 = document.getElementById('photo-2');
+    const simulation = document.getElementById('simulation');
+
+    teamPhoto.style.cssText = hidden;
+    spline.style.cssText = hidden;
+    photo2.style.cssText = hidden;
+    simulation.style.cssText = hidden;
+
+    if (scrollY < teamPhotoEnd) {
+      teamPhoto.style.cssText = visible;
+      currentSection = 1;
+
+    } else if (scrollY < splineEnd) {
+      spline.style.cssText = visible;
+      currentSection = 2;
+
+    } else if (scrollY < photo2End) {
+      photo2.style.cssText = visible;
+      currentSection = 3;
+
+    } else {
+      simulation.style.cssText = visible;
+      currentSection = 4;
+    }
+  }
+
+  window.addEventListener('scroll', updateVisibility);
+  window.addEventListener('load', updateVisibility);
+
+  updateVisibility();
+</script>
+
+<style>
+  #particles {
+    width: calc(50% - 48px);
+    left: 50%;
+  }
+
+
+  @keyframes float {
+    0% { transform: translateY(0px) rotate(2deg); }
+    50% { transform: translateY(-12px) rotate(3deg); }
+    100% { transform: translateY(0px) rotate(2deg); }
+  }
+
+
+
+  #team-photo {
+    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  #team-photo .photo-img {
+    animation: fadeInScale 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  @keyframes fadeInScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.95) translateY(20px);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(1.02) translateY(-5px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+</style>

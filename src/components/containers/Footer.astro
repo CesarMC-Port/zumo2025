@@ -1,0 +1,100 @@
+<footer class="border-t border-l border-r border-gray-800 px-4 py-3.5 md:px-8">
+  <div class="div-footer">
+    <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+    </div>
+  </div>  
+  <div class="text-white/70 flex flex-col items-center justify-between gap-3 text-sm md:flex-row">
+    <div class="inline-flex items-center gap-2 opacity-0 animate-fade-in animation-delay-200">
+      <span>© 2025 NeuroGear. All rights reserved</span>
+    </div>
+    <div class="inline-flex items-center gap-4 opacity-0 animate-fade-in animation-delay-600">
+      <a href="#home" class="hover:bg-white/5 rounded-md border border-gray-800 px-2 py-1 transition-all duration-300 hover:scale-110 hover:-translate-y-1">
+        Back to top
+      </a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .div-footer{
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    padding-top: 0px;
+    top: -170px;
+    overflow: hidden;
+    background: transparent;
+    z-index: 9;
+  }
+  .container-simple-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #110133; */
+    height: 240px;
+    width: 100%;
+  }
+  .div-footer .waves{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 200px;
+  }
+  .div-footer .wave {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: url(../../assets/pictures/wave3.svg);
+    background-size: 1000px 200px;
+    width: 100%;
+    height: 200px;
+    transform: scale(1.4);
+  }
+
+  .div-footer .wave#wave1{
+    z-index: 9;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave 8s linear infinite;
+  }
+  .div-footer .wave#wave2{
+    z-index: 10;
+    opacity: 0.2;
+    bottom: 100px;
+    animation: animateWave_2 8s linear infinite;
+  }
+  .div-footer .wave#wave3{
+    z-index: 9;
+    opacity: 0.5;
+    bottom: 30px;
+    animation: animateWave 6s linear infinite;
+  }
+  .div-footer .wave#wave4{
+    z-index: 10;
+    opacity: 0.9;
+    bottom: 40px;
+    animation: animateWave_2 6s linear infinite;
+  }
+
+  @keyframes animateWave {
+    0% {
+        background-position-x: 1000px;
+    }
+    100% {
+        background-position-x: 0px;
+    }
+  }
+  @keyframes animateWave_2 {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+  }
+</style>

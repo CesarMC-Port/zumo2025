@@ -1,0 +1,17 @@
+---
+const { text, class: className = "" } = Astro.props;
+---
+
+<div
+  id="animated-logo"
+  class={className}
+  style="transform-origin:center"
+>
+  {text}
+</div>
+
+<script>
+  import { initAnimatedLogo } from "./scripts";
+  const el = document.getElementById("animated-logo");
+  if (el) initAnimatedLogo(el);
+</script>

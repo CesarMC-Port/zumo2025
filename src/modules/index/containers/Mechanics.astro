@@ -1,0 +1,90 @@
+---
+---
+
+<section id="documentacion" class="py-20 px-6 w-full md:w-[47%]">
+  <div class="w-full">
+    <div class="mb-12 slide-up">
+      <span class="text-primary font-tech text-sm tracking-widest uppercase">01. Documentación</span>
+      <h2 class="text-5xl font-bold font-tech mt-4 mb-6">Diseño Mecánico</h2>
+    </div>
+
+    <div class="grid gap-6 mb-8">
+      <div class="bg-dark-card border border-gray-800 rounded-xl p-6 hover:border-primary transition-all duration-300 card-hover">
+        <h3 class="text-xl font-tech font-semibold mb-3 text-primary">Diseño CAD Completo</h3>
+        <p class="text-gray-400 mb-4">
+          Modelado en AutoDesk Inventor. Todas las piezas están optimizadas para impresión 3D.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs px-3 py-1 bg-primary/10 text-primary rounded-full">AutoDesk Inventor - OnSheap</span>
+          <span class="text-xs px-3 py-1 bg-primary/10 text-primary rounded-full">Impresión 3D</span>
+          <span class="text-xs px-3 py-1 bg-primary/10 text-primary rounded-full"></span>
+        </div>
+      </div>
+
+      <div class="bg-dark-card border border-gray-800 rounded-xl p-6 hover:border-primary transition-all duration-300 card-hover">
+        <h3 class="text-xl font-tech font-semibold mb-3 text-primary">Iteraciones del Chasis</h3>
+        <ul class="space-y-3 text-gray-400">
+          <li class="flex items-start">
+            <span class="text-primary mr-3">→</span>
+            <span><strong class="text-gray-200">V1:</strong> Prototipo inicial en cartón para validación de dimensiones</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-primary mr-3">→</span>
+            <span><strong class="text-gray-200">V2:</strong> Chasis en PLA con refuerzos internos</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-primary mr-3">→</span>
+            <span><strong class="text-gray-200">V3:</strong> Optimización con PETG y distribución de peso mejorada</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-primary mr-3">→</span>
+            <span><strong class="text-gray-200">V4:</strong> Versión final con base en aluminio para mayor estabilidad</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-dark-card border border-gray-800 rounded-xl p-6 hover:border-primary transition-all duration-300 card-hover">
+        <h3 class="text-xl font-tech font-semibold mb-3 text-primary">Especificaciones Técnicas</h3>
+        <div class="grid grid-cols-2 gap-4 text-sm">
+          <div>
+            <div class="text-gray-500 mb-1">Dimensiones</div>
+            <div class="font-semibold">10 x 10 cm</div>
+          </div>
+          <div>
+            <div class="text-gray-500 mb-1">Peso</div>
+            <div class="font-semibold">495 Gr</div>
+          </div>
+          <div>
+            <div class="text-gray-500 mb-1">Material Base</div>
+            <div class="font-semibold">..</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  .card-hover {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+  }
+</style>

@@ -1,0 +1,37 @@
+---
+import "../../styles/global.css";
+const { title, description, imageFix, canonical} = Astro.props;
+---
+<meta charset="UTF-8"/>
+<title>{title || 'Robot de Sumo Zumo | Proyecto de Robótica y Competencia'}</title>
+<meta name="robots" content="index,follow"></meta>
+<meta name="googlebot" content="index,follow" />
+<meta name="viewport" content="width=device-width" />
+
+<meta itemprop="name" content={title || 'Robot de Sumo Zumo | Proyecto de Robótica y Competencia'} />
+<meta itemprop="description" content={description || 'Conoce el robot de sumo Zumo: diseño, sensores, estrategia de combate y programación. Proyecto completo de robótica orientado a competiciones de minisumo.'} />
+<meta itemprop="image" content={imageFix || ''} />
+<meta name="description" content={description || 'Conoce el robot de sumo Zumo: diseño, sensores, estrategia de combate y programación. Proyecto completo de robótica orientado a competiciones de minisumo.'} />
+<meta name="image" content={imageFix || ''} />
+
+<meta property="og:title" content={title || 'Robot de Sumo Zumo | Proyecto de Robótica y Competencia'} />
+<meta property="og:description" content={description || 'Conoce el robot de sumo Zumo: diseño, sensores, estrategia de combate y programación. Proyecto completo de robótica orientado a competiciones de minisumo.'} />
+<meta name="image" property="og:image" content={imageFix || ''} />
+<meta property="og:url" content={canonical || `https://cesarmc-port.github.io/zumo2025`} />
+<meta property="og:type" content="website" />
+
+<meta property="twitter:title" content={ title || 'Robot de Sumo Zumo | Proyecto de Robótica y Competencia'} />
+<meta property="twitter:description" content={description || 'Conoce el robot de sumo Zumo: diseño, sensores, estrategia de combate y programación. Proyecto completo de robótica orientado a competiciones de minisumo.'} />
+<meta property="twitter:image" content={imageFix || ''} />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonical || `https://cesarmc-port.github.io/zumo2025`} />
+
+<meta name="twitter:title" content={ title || 'Robot de Sumo Zumo | Proyecto de Robótica y Competencia'} />
+<meta name="twitter:description" content={description || ''} />
+<meta name="twitter:image" content={imageFix || ''} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonical || `https://cesarmc-port.github.io/zumo2025`} />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="canonical" href={canonical || `https://cesarmc-port.github.io/zumo2025`} />
+<link rel="icon" href="/favicon.ico">

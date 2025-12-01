@@ -1,0 +1,60 @@
+---
+---
+
+<section id="programacion" class="py-20 px-6">
+  <div class="w-full md:w-[47%]">
+    <div class="mb-12">
+      <span class="text-primary font-tech text-sm tracking-widest uppercase">03. Documentación</span>
+      <h2 class="text-5xl font-bold font-tech mt-4 mb-6">Programación y Lógica</h2>
+      <p class="text-gray-400 text-lg">
+        Algoritmos de control autónomo con estrategias adaptativas y respuesta en tiempo real.
+      </p>
+    </div>
+
+    <div class="grid gap-6">
+      <div class="bg-dark-card border border-gray-800 rounded-xl p-6 hover:border-primary transition-all duration-300">
+        <h3 class="text-xl font-tech font-semibold mb-4 text-primary">Estrategia de Ataque</h3>
+        <p class="text-gray-400 mb-4">
+          El robot implementa un sistema de búsqueda en espiral y ataque directo cuando detecta al oponente.
+        </p>
+        <div class="bg-dark rounded-lg overflow-hidden border border-gray-800">
+          <div class="bg-gray-900 px-4 py-2 text-xs text-gray-500 border-b border-gray-800">
+            main.cpp
+          </div>
+          <pre class="p-4 overflow-x-auto text-sm"><code class="language-cpp"><span class="text-purple-400">void</span> <span class="text-blue-400">attackStrategy</span>() {'{'}<br />  <span class="text-gray-500">// Leer sensores ultrasónicos</span><br />  <span class="text-purple-400">int</span> distFront = <span class="text-blue-400">readUltrasonic</span>(TRIG_FRONT, ECHO_FRONT);<br />  <span class="text-purple-400">int</span> distLeft = <span class="text-blue-400">readUltrasonic</span>(TRIG_LEFT, ECHO_LEFT);<br />  <span class="text-purple-400">int</span> distRight = <span class="text-blue-400">readUltrasonic</span>(TRIG_RIGHT, ECHO_RIGHT);<br /><br />  <span class="text-purple-400">if</span> (distFront &lt; <span class="text-green-400">30</span>) {'{'}<br />    <span class="text-gray-500">// Oponente detectado al frente - ataque directo</span><br />    <span class="text-blue-400">moveForward</span>(<span class="text-green-400">255</span>); <span class="text-gray-500">// Máxima velocidad</span><br />  {'}'} <span class="text-purple-400">else if</span> (distLeft &lt; <span class="text-green-400">40</span>) {'{'}<br />    <span class="text-gray-500">// Girar hacia la izquierda</span><br />    <span class="text-blue-400">turnLeft</span>(<span class="text-green-400">200</span>);<br />  {'}'} <span class="text-purple-400">else if</span> (distRight &lt; <span class="text-green-400">40</span>) {'{'}<br />    <span class="text-gray-500">// Girar hacia la derecha</span><br />    <span class="text-blue-400">turnRight</span>(<span class="text-green-400">200</span>);<br />  {'}'} <span class="text-purple-400">else</span> {'{'}<br />    <span class="text-gray-500">// Búsqueda en espiral</span><br />    <span class="text-blue-400">spiralSearch</span>();<br />  {'}'}<br />{'}'}</code></pre>
+        </div>
+      </div>
+
+      <div class="bg-dark-card border border-gray-800 rounded-xl p-6 hover:border-primary transition-all duration-300">
+        <h3 class="text-xl font-tech font-semibold mb-4 text-primary">Control de Motores (PWM)</h3>
+        <p class="text-gray-400 mb-4">
+          Sistema de control con modulación por ancho de pulso para velocidad variable y maniobras precisas.
+        </p>
+        <div class="bg-dark rounded-lg overflow-hidden border border-gray-800">
+          <div class="bg-gray-900 px-4 py-2 text-xs text-gray-500 border-b border-gray-800">
+            motor_control.cpp
+          </div>
+          <pre class="p-4 overflow-x-auto text-sm"><code class="language-cpp"><span class="text-purple-400">void</span> <span class="text-blue-400">moveForward</span>(<span class="text-purple-400">int</span> speed) {'{'}<br />  <span class="text-blue-400">digitalWrite</span>(MOTOR_L_DIR1, <span class="text-green-400">HIGH</span>);<br />  <span class="text-blue-400">digitalWrite</span>(MOTOR_L_DIR2, <span class="text-green-400">LOW</span>);<br />  <span class="text-blue-400">digitalWrite</span>(MOTOR_R_DIR1, <span class="text-green-400">HIGH</span>);<br />  <span class="text-blue-400">digitalWrite</span>(MOTOR_R_DIR2, <span class="text-green-400">LOW</span>);<br /><br />  <span class="text-blue-400">analogWrite</span>(MOTOR_L_PWM, speed);<br />  <span class="text-blue-400">analogWrite</span>(MOTOR_R_PWM, speed);<br />{'}'}<br /><br /><span class="text-purple-400">void</span> <span class="text-blue-400">turnLeft</span>(<span class="text-purple-400">int</span> speed) {'{'}<br />  <span class="text-blue-400">digitalWrite</span>(MOTOR_L_DIR1, <span class="text-green-400">LOW</span>);<br />  <span class="text-blue-400">digitalWrite</span>(MOTOR_L_DIR2, <span class="text-green-400">HIGH</span>);<br />  <span class="text-blue-400">digitalWrite</span>(MOTOR_R_DIR1, <span class="text-green-400">HIGH</span>);<br />  <span class="text-blue-400">digitalWrite</span>(MOTOR_R_DIR2, <span class="text-green-400">LOW</span>);<br /><br />  <span class="text-blue-400">analogWrite</span>(MOTOR_L_PWM, speed);<br />  <span class="text-blue-400">analogWrite</span>(MOTOR_R_PWM, speed);<br />{'}'}</code></pre>
+        </div>
+      </div>
+
+      <div class="bg-dark-card border border-gray-800 rounded-xl p-6 hover:border-primary transition-all duration-300">
+        <h3 class="text-xl font-tech font-semibold mb-4 text-primary">Detección de Línea</h3>
+        <p class="text-gray-400 mb-4">
+          Los sensores infrarrojos detectan el borde del ring y activan maniobras evasivas para evitar salir del área de combate.
+        </p>
+        <div class="bg-dark rounded-lg overflow-hidden border border-gray-800">
+          <div class="bg-gray-900 px-4 py-2 text-xs text-gray-500 border-b border-gray-800">
+            sensors.cpp
+          </div>
+          <pre class="p-4 overflow-x-auto text-sm"><code class="language-cpp"><span class="text-purple-400">void</span> <span class="text-blue-400">checkLineSensors</span>() {'{'}<br />  <span class="text-purple-400">bool</span> lineDetected = <span class="text-green-400">false</span>;<br /><br />  <span class="text-purple-400">if</span> (<span class="text-blue-400">digitalRead</span>(IR_FRONT_LEFT) == <span class="text-green-400">HIGH</span> ||<br />      <span class="text-blue-400">digitalRead</span>(IR_FRONT_RIGHT) == <span class="text-green-400">HIGH</span>) {'{'}<br />    <span class="text-gray-500">// Línea detectada al frente - retroceder y girar</span><br />    <span class="text-blue-400">moveBackward</span>(<span class="text-green-400">255</span>);<br />    <span class="text-blue-400">delay</span>(<span class="text-green-400">300</span>);<br />    <span class="text-blue-400">turnLeft</span>(<span class="text-green-400">200</span>);<br />    <span class="text-blue-400">delay</span>(<span class="text-green-400">400</span>);<br />    lineDetected = <span class="text-green-400">true</span>;<br />  {'}'}<br /><br />  <span class="text-purple-400">if</span> (<span class="text-blue-400">digitalRead</span>(IR_BACK_LEFT) == <span class="text-green-400">HIGH</span> ||<br />      <span class="text-blue-400">digitalRead</span>(IR_BACK_RIGHT) == <span class="text-green-400">HIGH</span>) {'{'}<br />    <span class="text-gray-500">// Línea detectada atrás - avanzar</span><br />    <span class="text-blue-400">moveForward</span>(<span class="text-green-400">255</span>);<br />    <span class="text-blue-400">delay</span>(<span class="text-green-400">400</span>);<br />    lineDetected = <span class="text-green-400">true</span>;<br />  {'}'}<br /><br />  <span class="text-purple-400">return</span> lineDetected;<br />{'}'}</code></pre>
+        </div>
+      </div>
+
+      <div class="bg-dark-card border border-gray-800 rounded-xl p-6 hover:border-primary transition-all duration-300">
+        <h3 class="text-xl font-tech font-semibold mb-3 text-primary">Características del Código</h3>
+       
+      </div>
+    </div>
+  </div>
+</section>
