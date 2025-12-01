@@ -6,8 +6,8 @@ const team = './assets/team.jpeg';
 const diagram = './assets/diagram.webp';
 ---
 
-<div id="particles" class="bg-[#0d1117] fixed rounded-br-md border-l-2 border-gray-600 inset-0 overflow-hidden h-full">
-  {Array.from({ length: 120 }).map((_, i) => (
+<div id="particles" class="bg-[#0d1117] hidden md:flex fixed rounded-br-md border-l-2 border-gray-600 inset-0 overflow-hidden h-full">
+  {Array.from({ length: 120 }).map(() => (
     <div
       class="particle absolute w-1 h-1 bg-white opacity-35 rounded-full"
       style={`left:${Math.random() * 100}%; top:${Math.random() * 100}%;`}
@@ -96,7 +96,6 @@ const diagram = './assets/diagram.webp';
     width: calc(50% - 48px);
     left: 50%;
   }
-
 
   @keyframes float {
     0% { transform: translateY(0px) rotate(2deg); }
