@@ -2,7 +2,7 @@ import { animate, random, stagger } from 'animejs';
 const top = './assets/top.png';          // robot
 const boxTexture = './assets/box.png';   // si quieres textura para las cajas
 
-export default async function initSimulator() {
+export async function initSimulator() {
   const canvas = document.getElementById("arena") as HTMLCanvasElement;
   const ctx = canvas.getContext("2d")!;
 

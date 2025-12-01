@@ -10,7 +10,7 @@ import relativeLinks from 'astro-relative-links';
 
 export default defineConfig({
   site: 'https://cesarmc-port.github.io',
-  base: '/zumo2025',
+  base: '/',
   integrations: [vue(), sitemap({
     serialize(item) {
       if (item.url === 'https://cesarmc-port.github.io/zumo2025') {
