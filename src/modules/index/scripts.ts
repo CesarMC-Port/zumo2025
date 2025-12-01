@@ -139,6 +139,7 @@ export async function initSimulator() {
 
     robot.state = "SEARCH";
     robot.angle += 0.03;
+    robot.angle = normalize(robot.angle);
   }
 
   function move(speed: number) {
