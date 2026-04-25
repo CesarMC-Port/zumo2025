@@ -1,27 +1,41 @@
 ---
+
 ---
 
-<section id="programacion" class="py-20 px-6">
-  <div class="w-full md:w-[47%]">
+<section id="programacion" class="py-20 px-6 w-full md:w-[47%]">
+  <div class="w-full">
     <div class="mb-12">
-      <span class="text-primary font-tech text-sm tracking-widest uppercase">03. Documentación</span>
-      <h2 class="text-5xl font-bold font-tech mt-4 mb-6">Programación y Lógica</h2>
+      <span class="text-primary font-tech text-sm tracking-widest uppercase"
+        >03. Documentación</span
+      >
+      <h2 class="text-5xl font-bold font-tech mt-4 mb-6">
+        Programación y Lógica
+      </h2>
       <p class="text-gray-400 text-lg">
-        Algoritmos de control autónomo con estrategias adaptativas y respuesta en tiempo real.
+        Algoritmos de control autónomo con estrategias adaptativas y respuesta
+        en tiempo real.
       </p>
     </div>
 
     <div class="grid gap-6">
-      <div class="max-w-[330px] md:max-w-[1000px] bg-dark-card border border-gray-800 rounded-xl p-6 hover:border-primary transition-all duration-300">
-        <h3 class="text-xl font-tech font-semibold mb-4 text-primary">Estrategia de Ataque</h3>
+      <div
+        class="w-full min-w-0 bg-dark-card border border-gray-800 rounded-xl p-6 hover:border-primary transition-all duration-300"
+      >
+        <h3 class="text-xl font-tech font-semibold mb-4 text-primary">
+          Estrategia de Ataque
+        </h3>
         <p class="text-gray-400 mb-4">
-          El robot implementa un sistema de búsqueda en espiral y ataque directo cuando detecta al oponente.
+          El robot implementa un sistema de búsqueda en espiral y ataque directo
+          cuando detecta al oponente.
         </p>
         <div class="bg-dark rounded-lg overflow-hidden border border-gray-800">
-          <div class="bg-gray-900 px-4 py-2 text-xs text-gray-500 border-b border-gray-800">
+          <div
+            class="bg-gray-900 px-4 py-2 text-xs text-gray-500 border-b border-gray-800"
+          >
             main.cpp
           </div>
-<pre class="p-4 overflow-x-auto text-sm"><code class="language-cpp">
+          <pre
+            class="p-4 max-h-[400px] overflow-auto text-sm custom-scrollbar"><code class="language-cpp">
 <span class="text-purple-400">void</span> <span class="text-blue-400">estrategia</span>() {'{'}<br />
 &nbsp;&nbsp;<span class="text-gray-500">// --- PRIORIDAD 1: ZONA DE ATAQUE ---</span><br />
 &nbsp;&nbsp;<span class="text-purple-400">if</span> (distanciaFrente &lt; distanciaAtaque) {'{'}<br />
@@ -80,16 +94,24 @@
         </div>
       </div>
 
-      <div class="max-w-[330px] md:max-w-[1000px] bg-dark-card border border-gray-800 rounded-xl p-6 hover:border-primary transition-all duration-300">
-        <h3 class="text-xl font-tech font-semibold mb-4 text-primary">Control de Motores (PWM)</h3>
+      <div
+        class="w-full min-w-0 bg-dark-card border border-gray-800 rounded-xl p-6 hover:border-primary transition-all duration-300"
+      >
+        <h3 class="text-xl font-tech font-semibold mb-4 text-primary">
+          Control de Motores (PWM)
+        </h3>
         <p class="text-gray-400 mb-4">
-          Sistema de control con modulación por ancho de pulso para velocidad variable y maniobras precisas.
+          Sistema de control con modulación por ancho de pulso para velocidad
+          variable y maniobras precisas.
         </p>
         <div class="bg-dark rounded-lg overflow-hidden border border-gray-800">
-          <div class="bg-gray-900 px-4 py-2 text-xs text-gray-500 border-b border-gray-800">
+          <div
+            class="bg-gray-900 px-4 py-2 text-xs text-gray-500 border-b border-gray-800"
+          >
             motor_control.cpp
           </div>
-<pre class="p-4 overflow-x-auto text-sm"><code class="language-cpp"><span class="text-purple-400">void</span> <span class="text-blue-400">adelante</span>(<span class="text-purple-400">int</span> velocidad) {'{'}<br />
+          <pre
+            class="p-4 max-h-[400px] overflow-auto text-sm custom-scrollbar"><code class="language-cpp"><span class="text-purple-400">void</span> <span class="text-blue-400">adelante</span>(<span class="text-purple-400">int</span> velocidad) {'{'}<br />
   <span class="text-blue-400">digitalWrite</span>(MOTOR_IZQ_IN1_PIN, <span class="text-green-400">HIGH</span>);<br />
   <span class="text-blue-400">digitalWrite</span>(MOTOR_IZQ_IN2_PIN, <span class="text-green-400">LOW</span>);<br />
   <span class="text-blue-400">analogWrite</span>(MOTOR_IZQ_PWM_PIN, velocidad);<br />
@@ -132,16 +154,24 @@
         </div>
       </div>
 
-      <div class="max-w-[330px] md:max-w-[1000px] bg-dark-card border border-gray-800 rounded-xl p-6 hover:border-primary transition-all duration-300">
-        <h3 class="text-xl font-tech font-semibold mb-4 text-primary">Detección de Línea</h3>
+      <div
+        class="w-full min-w-0 bg-dark-card border border-gray-800 rounded-xl p-6 hover:border-primary transition-all duration-300"
+      >
+        <h3 class="text-xl font-tech font-semibold mb-4 text-primary">
+          Detección de Línea
+        </h3>
         <p class="text-gray-400 mb-4">
-          Los sensores infrarrojos detectan el borde del ring y activan maniobras evasivas para evitar salir del área de combate.
+          Los sensores infrarrojos detectan el borde del ring y activan
+          maniobras evasivas para evitar salir del área de combate.
         </p>
         <div class="bg-dark rounded-lg overflow-hidden border border-gray-800">
-          <div class="bg-gray-900 px-4 py-2 text-xs text-gray-500 border-b border-gray-800">
+          <div
+            class="bg-gray-900 px-4 py-2 text-xs text-gray-500 border-b border-gray-800"
+          >
             sensors.cpp
           </div>
-<pre class="p-4 overflow-x-auto text-sm"><code class="language-cpp"><span class="text-purple-400">void</span> <span class="text-blue-400">estrategiaLinea</span>() {'{'}<br />
+          <pre
+            class="p-4 max-h-[400px] overflow-auto text-sm custom-scrollbar"><code class="language-cpp"><span class="text-purple-400">void</span> <span class="text-blue-400">estrategiaLinea</span>() {'{'}<br />
   <span class="text-purple-400">static unsigned long</span> inicioManiobra = <span class="text-green-400">0</span>;<br />
   <span class="text-purple-400">static bool</span> enManiobra = <span class="text-green-400">false</span>;<br />
 <br />
@@ -208,10 +238,34 @@
         </div>
       </div>
 
-      <div class="max-w-[330px] md:max-w-[1000px] bg-dark-card border border-gray-800 rounded-xl p-6 hover:border-primary transition-all duration-300">
-        <h3 class="text-xl font-tech font-semibold mb-3 text-primary">Características del Código</h3>
-       
+      <div
+        class="w-full min-w-0 bg-dark-card border border-gray-800 rounded-xl p-6 hover:border-primary transition-all duration-300"
+      >
+        <h3 class="text-xl font-tech font-semibold mb-3 text-primary">
+          Características del Código
+        </h3>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #333 transparent;
+  }
+</style>

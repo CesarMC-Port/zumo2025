@@ -8,26 +8,28 @@ import { Github } from "@lucide/astro";
     <nav class="w-nav border-b border-gray-800 px-4 py-2.5 md:px-8 backdrop-blur-sm bg-[#0d1117]/90 fixed top-0 z-50" id="home">
       <div class="flex items-center justify-between gap-4">
       <div class="items-center gap-2 opacity-0 animate-slide-in-left hidden md:flex">
-        <AnimatedLogo
-          text="<NeuroGear/>"
-          class="border-2 border-white px-4 py-2 font-mono text-sm hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
-        />
+        <a href="#hero">
+          <AnimatedLogo
+            text="<NeuroGear/>"
+            class="border-2 border-white px-4 py-2 font-mono text-sm hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
+          />
+        </a>
       </div>
 
       <div class="flex items-center gap-8 opacity-0 animate-fade-in animation-delay-200">
-        <a href="#home" class="hover:text-gray-400 transition-all duration-300 hover:scale-110 relative group">
+        <a href="#hero" class="hover:text-gray-400 transition-all duration-300 hover:scale-110 relative group">
           Home
           <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
         </a>
-        <a href="#about" class="hover:text-gray-400 transition-all duration-300 hover:scale-110 relative group">
+        <a href="#mecanica" class="hover:text-gray-400 transition-all duration-300 hover:scale-110 relative group">
           Mechanics
           <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
         </a>
-        <a href="#projects" class="hover:text-gray-400 transition-all duration-300 hover:scale-110 relative group">
+        <a href="#electronica" class="hover:text-gray-400 transition-all duration-300 hover:scale-110 relative group">
           Electronics
           <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
         </a>
-        <a href="#projects" class="hover:text-gray-400 transition-all duration-300 hover:scale-110 relative group">
+        <a href="#programacion" class="hover:text-gray-400 transition-all duration-300 hover:scale-110 relative group">
           Software
           <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
         </a>
